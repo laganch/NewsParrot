@@ -1,11 +1,10 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "engines":{
-    "node":"10.15.3",
-    "npm":"6.9.0"
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -42,5 +41,6 @@
   },
   "devDependencies": {
     "forever": "^1.0.0"
-  }
+  },
+  "description": ""
 }
