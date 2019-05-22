@@ -12,7 +12,7 @@
     "server": "nodemon app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  --prefix client   --only=dev && npm run build --prefix client"
+    "heroku-postbuild": "npm install  --prefix client   --only=dev && npm run build --prefix client"
   },
   "author": "buchi",
   "license": "ISC",
