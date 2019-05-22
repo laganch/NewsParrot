@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines":{
-    "node":"10.15.3",
-    "npm":"6.9.0"
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -33,6 +33,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
+    "path": "^0.12.7",
     "path-parser": "^4.2.0",
     "react-dropzone": "^10.1.4",
     "react-input-autosize": "^2.2.1",
