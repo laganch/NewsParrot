@@ -49,9 +49,9 @@ postRoutes(app)
 
 
 
+const path = require('path');
 app.use(express.static(path.join(__dirname,'client/build')));
 
-const path = require('path');
 app.get('*', (req, res)=>{
 	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
