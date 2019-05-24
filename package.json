@@ -40,8 +40,5 @@
     "react-select": "^2.4.3",
     "sendgrid": "^5.2.3",
     "stripe": "^6.28.0"
-  },
-  "devDependencies": {
-    "forever": "^1.0.0"
   }
 }
