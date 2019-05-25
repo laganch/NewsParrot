@@ -18,7 +18,9 @@ const keys 						=require("./config/keys");
 								require('./service/passportLocal');
 
 
-mongoose.connect("mongodb://laganch:wisdom4190@ds119662.mlab.com:19662/cryptoapp");
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI);
+
 const User = mongoose.model("user");
 
 const app = express();
@@ -28,11 +30,7 @@ app.use(cookieSession({
     keys: [keys.cookieKey]
 }));
 
-// app.use(expressSession({
-//     secret: "this will help me out",
-//     resave: true,
-//     saveUninitialized: true
-// }));
+
 app.use(express.static('client/build'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,12 +46,17 @@ billingRoutes(app)
 surveyRoutes(app)
 postRoutes(app)
 
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up production assets
+  // like our main.js file, or main.css file!
+  app.use(express.static('client/build'));
 
-
-
-app.get('*', (req, res)=>{
-	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+  // Express will serve up the index.html file
+  // if it doesn't recognize the route
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 
 const Port = process.env.PORT || 5000;
